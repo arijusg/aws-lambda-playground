@@ -17,3 +17,8 @@ npm install
 ```
 gulp
 ```
+
+### Run demo function
+```bash
+(cd dist/demoFunction; sls invoke local --function hello --path event.json)
+```

@@ -1,7 +1,7 @@
 import * as mocha from 'mocha';
 import * as chai from 'chai';
 
-import { hello } from '../../src/demoFunction/handler';
+import { hello } from '../src/handler';
 
 const expect = chai.expect;
 

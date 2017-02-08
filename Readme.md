@@ -1,7 +1,7 @@
 # Finq
 
 
-## Install gloval dependencies
+## Install global dependencies
 ```bash
 npm install serverless -g
 ```
@@ -20,5 +20,5 @@ gulp
 
 ### Run demo function
 ```bash
-(cd dist/demoFunction; sls invoke local --function hello --path event.json)
+(cd dist; sls invoke local --function hello --path ../src/event.json)
 ```

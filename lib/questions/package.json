@@ -5,6 +5,7 @@
   "main": "handler.js",
   "scripts": {
     "test": "node_modules/.bin/karma start",
+    "test-dev": "node_modules/.bin/karma start --no-single-run",
     "lint": "node_modules/.bin/tslint *.ts; true",
     "watch": "SLS_DEBUG=* serverless webpack watch --function questions --path event.json"
   },

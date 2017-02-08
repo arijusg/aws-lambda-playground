@@ -28,7 +28,6 @@ sls webpack
 sls webpack invoke -f hello -p event.json
 ```
 
-
 ## Run and watch function
 ```bash
 serverless webpack watch --function hello --path event.json

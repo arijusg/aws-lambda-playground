@@ -3,8 +3,6 @@ export interface IHeaders {
 }
 
 export interface IResponsePayload {
-  //message: string;
-  //event: any;
   statusCode: string;
   body: any;
   headers: IHeaders;
@@ -21,4 +19,15 @@ export interface IEventPayload {
 
 export interface ICallback {
   (error: any, result: IResponsePayload): void;
+}
+
+export class Answer {
+    title: string;
+}
+
+export class Question  {
+    id: number;
+    title: string;
+    category: string;
+    answers: Array<Answer>;
 }

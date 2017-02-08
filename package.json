@@ -1,11 +1,10 @@
 {
-  "name": "finq-campaign",
+  "name": "demo",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall": "node bin/preinstall.js",
-    "test": "echo TODO: Impletement all tests run" 
+    "preinstall": "node bin/preinstall.js"
   },
   "author": "",
   "license": "ISC"

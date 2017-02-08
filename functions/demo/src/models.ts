@@ -8,8 +8,8 @@ export interface IQueryParameters {
 }
 
 export interface IEventPayload {  
-  method: string;
-  query: IQueryParameters;
+  httpMethod: string;
+  queryStringParameters: IQueryParameters;
 }
 
 export interface ICallback {  

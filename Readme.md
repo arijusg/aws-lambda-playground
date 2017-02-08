@@ -1,9 +1,9 @@
-# Finq
+# Demo
 
 
 ## Install global dependencies
 ```bash
-npm install serverless -g
+npm install serverless karma-cli -g
 ```
 
 ## Develop
@@ -13,12 +13,33 @@ npm install serverless -g
 npm install
 ```
 
-### Watch files
-```
-gulp
+### Run tests
+```bash
+npm test
 ```
 
-### Run demo function
+## Build
 ```bash
-(cd dist; sls invoke local --function hello --path ../src/event.json)
+sls webpack
+```
+
+## Invoke function
+```bash
+sls webpack invoke -f hello -p event.json
+```
+
+
+## Run and watch function
+```bash
+serverless webpack watch --function hello --path event.json
+```
+
+## Simulate function locally
+```bash
+serverless webpack serve
+```
+## Debug
+Add SLS_DEBUG=* environment variable to enable debug mode eg:
+```bash
+SLS_DEBUG=* sls webpack invoke -f hello -p event.json
 ```

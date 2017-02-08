@@ -7,7 +7,10 @@
     "test": "node_modules/.bin/karma start",
     "test-dev": "node_modules/.bin/karma start --no-single-run",
     "lint": "node_modules/.bin/tslint *.ts; true",
-    "watch": "SLS_DEBUG=* serverless webpack watch --function questions --path event.json"
+    "build": "SLS_DEBUG=* serverless webpack",
+    "watch": "SLS_DEBUG=* serverless webpack watch --function questions --path event.json",
+    "invoke": "SLS_DEBUG=* serverless webpack invoke --function questions --path event.json",
+    "serve": "SLS_DEBUG=* serverless webpack serve"
   },
   "author": "",
   "license": "ISC",

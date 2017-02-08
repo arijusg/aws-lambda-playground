@@ -1,15 +1,5 @@
 import { ICallback, IEventPayload } from './models';
-
-
-import { TestData } from '../test/testData';
-
-class QuestionsLoader {
-  public Load(): any {
-    let data = new TestData();
-
-    return [data.Question1, data.Question2];
-  }
-}
+import { QuestionService } from './questionService';
 
 export function questions(event: IEventPayload, context, callback: ICallback) {
 
@@ -19,12 +9,10 @@ export function questions(event: IEventPayload, context, callback: ICallback) {
     headers: { 'Content-Type': 'application/json' }
   });
 
-  let body = `Method: ${event.httpMethod}, Param: ${event.queryStringParameters.foo}`;
-  let message = body;
-
   if (event.httpMethod === 'GET') {
-    let loader = new QuestionsLoader();
-    let questions = loader.Load();
+    let questionService = new QuestionService();
+
+    let questions = questionService.GetAll();
     done(undefined, questions);
   }
   else

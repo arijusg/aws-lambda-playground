@@ -11,13 +11,7 @@ var testData = new TestData();
 
 describe('questions function', () => {
   it('should return error on not supported httpMethod', done => {
-    var request: models.IEventPayload;
-    request = {
-      httpMethod: 'POST',
-      queryStringParameters: {
-        foo: 'Irrelevant'
-      }
-    }
+    var request: models.IEventPayload = { httpMethod: 'POST' }
 
     handler.questions(request, {}, (err, result) => {
       expect(err).to.be.null;
@@ -30,13 +24,7 @@ describe('questions function', () => {
   });
 
   it('should return questions', done => {
-    var request: models.IEventPayload;
-    request = {
-      httpMethod: 'GET',
-      queryStringParameters: {
-        foo: 'Irrelevant' //TODO
-      }
-    }
+    var request: models.IEventPayload = { httpMethod: 'GET' }
 
     handler.questions(request, {}, (err, result) => {
       expect(err).to.be.null;

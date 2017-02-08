@@ -42,3 +42,7 @@ Add SLS_DEBUG=* environment variable to enable debug mode eg:
 ```bash
 SLS_DEBUG=* sls webpack invoke -f hello -p event.json
 ```
+## Deploy
+```bash
+sls deploy --region eu-west-1 --stage production
+```

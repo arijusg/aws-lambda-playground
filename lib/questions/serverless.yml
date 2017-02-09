@@ -3,15 +3,20 @@ service: questions-service
 provider:  
   name: aws
   runtime: nodejs4.3
+  stage: prod
+  region: eu-west-1
 
 plugins:  
   - serverless-webpack
 
 functions:  
   questions:
-    handler: handler.questions
-
-    events:
-     - http:
-         path: questions
-         method: get
+    handler: handler.questions # The file and module for this specific function.
+    memorySize: 128 # memorySize for this specific function.
+    timeout: 10 # Timeout for this specific function.  Overrides the default set above.
+    events: # The Events that trigger this Function
+     - http: # This creates an API Gateway HTTP endpoint which can be used to trigger this function.  Learn more in "events/apigateway"
+         path: questions # Path for this endpoint
+         method: get # HTTP method for this endpoint
+         cors: true # Turn on CORS for this endpoint, but don't forget to return the right header in your response
+         private: false # Requires clients to add API keys values in the `x-api-key` header of their request
